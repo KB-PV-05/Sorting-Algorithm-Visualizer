@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Comparison Sorting Algorithms</title>
+    <style>
+      body {
+        background-color: green;
+        font-family: "Segoe UI", sans-serif;
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        margin: 20px 0;
+        color: yellow;
+      }
+
+      #controls {
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      #controls button,
+      #controls input[type="range"] {
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #controls button:hover {
+        opacity: 0.8;
+      }
+
+      #barContainer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        height: 400px;
+        margin: 20px auto 10px;
+        border: 1px solid #ccc;
+        background: white;
+        position: relative;
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+
+      .barWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 1px;
+      }
+
+      .bar {
+        background-color: cornflowerblue;
+        width: 10px;
+        transition: height 0.3s ease;
+      }
+
+      .valueLabel {
+        font-size: 10px;
+        color: black;
+        margin-top: 5px;
+      }
+
+      .speedControl,
+      .sizeControl {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+      }
+
+      input[type="range"] {
+        width: 150px;
+        -webkit-appearance: none;
+        appearance: none;
+        background: white;
+        height: 5px;
+        border-radius: 5px;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: rgb(202, 200, 200);
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Comparison Sorting Algorithms</h1>
+
+    <div id="controls">
+      <button onclick="randomizeArray()">Randomize Sort</button>
+      <button onclick="insertionSort()">Insertion Sort</button>
+      <button onclick="selectionSort()">Selection Sort</button>
+      <button onclick="bubbleSort()">Bubble Sort</button>
+      <button onclick="quickSortStart()">Quick Sort</button>
+      <button onclick="mergeSortStart()">Merge Sort</button>
+      <button onclick="shellSort()">Shell Sort</button>
+      <button onclick="changeSize()">Change Canvas Size</button>
+
+      <div id="barContainer"></div>
+
+      <div id="controls">
+        <button onclick="skipBack()">Skip Back</button>
+        <button onclick="stepBack()">Step Back</button>
+        <button onclick="togglePause()">Pause/Resume</button>
+        <button onclick="stepForward()">Step Forward</button>
+        <button onclick="skipForward()">Skip Forward</button>
+
+        <div class="speedControl">
+          <label>Animation Speed</label>
+          <input type="range" id="speedSlider" min="1" max="200" value="50" />
+        </div>
+
+        <button onclick="changeCanvasSize()">Change Canvas Size</button>
+        <button onclick="moveControls()">Move Controls</button>
+      </div>
+    </div>
+
+    <script src="sort.js"></script>
+  </body>
+</html>
